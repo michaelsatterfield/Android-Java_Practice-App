@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Practice App</string>
+    <string name="large_text">
+       Hello World, My Name is Michael Satterfield and Im a Software Developer!
+    </string>
+    <string name="description">
+        I\'m practicing with IntelliJ to create and android app
+    </string>
+    <string name="action_settings">Settings</string>
+</resources>
