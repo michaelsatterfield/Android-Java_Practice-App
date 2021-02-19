@@ -15,26 +15,9 @@
             android:layout_width="match_parent"
             android:theme="@style/AppTheme.AppBarOverlay">
 
-        <com.google.android.material.appbar.CollapsingToolbarLayout
-                android:id="@+id/toolbar_layout"
-                android:fitsSystemWindows="true"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:toolbarId="@+id/toolbar"
-                app:layout_scrollFlags="scroll|exitUntilCollapsed"
-                app:contentScrim="?attr/colorPrimary">
-
-            <androidx.appcompat.widget.Toolbar
-                    android:id="@+id/toolbar"
-                    android:layout_height="?attr/actionBarSize"
-                    android:layout_width="match_parent"
-                    app:layout_collapseMode="pin"
-                    app:popupTheme="@style/AppTheme.PopupOverlay"/>
-
-        </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <include layout="@layout/content_scrolling"/>
+    <include layout="@layout/content_scrolling" android:id="@+id/include"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab"
@@ -46,8 +29,33 @@
             app:srcCompat="@android:drawable/ic_dialog_email"/>
     <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent" android:id="@+id/frameLayout">
-
-    </FrameLayout>
+            android:layout_height="match_parent" android:id="@+id/frameLayout" app:layout_anchorGravity="center"
+            app:layout_anchor="@+id/include"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            app:layout_anchorGravity="center" app:layout_anchor="@+id/frameLayout"
+            android:id="@+id/firstNumEditText" android:singleLine="false" android:selectAllOnFocus="false"
+            android:hint="Enter A Number"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number|textPersonName"
+            android:ems="10"
+            app:layout_anchorGravity="bottom|center" app:layout_anchor="@+id/firstNumEditText"
+            android:id="@+id/secondNumEditText" android:hint="Enter Second Number"/>
+    <Button
+            android:text="Add "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button1" app:layout_anchorGravity="bottom|center" app:layout_anchor="@+id/include"/>
+    <TextView
+            android:text="TextView"
+            android:layout_width="152dp"
+            android:layout_height="81dp" app:layout_anchorGravity="end|bottom" app:layout_anchor="@+id/include"
+            android:id="@+id/resultTextView" android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textSize="36sp" tools:text="Result"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
